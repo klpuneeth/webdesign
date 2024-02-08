@@ -1,23 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Navigate, Route, Routes } from "react-router-dom";
+import "./App.css";
+import LeaveTable from "./components/LeaveTable";
+import Login from "./components/Login";
+import Register from "./components/Register";
+// import "./styles/font.css";
+import EmployeeComponent from "./components/EmployeeComponent";
+import { useSelector } from "react-redux";
+// import AttendanceList from "./components/AttendanceList";
 function App() {
+  const isAuth = useSelector((state) => state.isAuth);
+  console.log(isAuth);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            isAuth === "false" ? (
+              <Register />
+            ) : (
+              <Navigate to="/employee" replace />
+            )
+          }
+        />
+        {isAuth === "true" ? (
+          <>
+            <Route path="/employee" element={<EmployeeComponent />} />
+            <Route path="/leave" element={<LeaveTable />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </>
+        ) : (
+          <>
+            <Route path="/" element={<Register />} />
+            <Route path="/signin" element={<Login />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </>
+        )}
+      </Routes>
+      {/* <Login /> */}
+      {/* <Navbars /> */}
+      {/* <LeaveModel /> */}
+      {/* <LeaveTable /> */}
+      {/* <AttendanceList /> */}
+      {/* <EmployeeComponent /> */}
+      {/* <Register /> */}
     </div>
   );
 }

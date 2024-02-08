@@ -1,0 +1,57 @@
+.image {
+  top: 74px;
+  left: 207px;
+  width: 500px;
+  height: 350px;
+  opacity: 1;
+  margin-top: 80px;
+  margin-left: 250px;
+}
+
+.title {
+  text-align: center;
+  color: #fa5a7a;
+  /* color: #ff00de; */
+  /* text-shadow: -1px -1px 0 #ff00de, 1px -1px 0 #ff00de, -1px 1px 0 #ff00de,
+      1px 1px 0 #ff00de, 0 -2px 5px 0 rgba(255, 0, 222, 0.7),
+      0 2px 5px 0 rgba(255, 0, 222, 0.7), -2px 0 5px 0 rgba(255, 0, 222, 0.7),
+      2px 0 5px 0 rgba(255, 0, 222, 0.7); */
+  font-size: 50px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  user-select: none;
+  cursor: default;
+}
+@font-face {
+  font-family: "StarJedi Special Edition";
+  src: url("https://www.fontsaddict.com/fontface/starjedi-special-edition.TTF");
+}
+
+.login-header {
+  margin-left: 90px;
+  padding-top: 5px;
+  font-size: 12px;
+  color: white;
+}
+
+.inputs {
+  border: none;
+  border-bottom: 2px solid #333;
+  outline: none;
+  margin-bottom: 10px;
+  background-color: #4c56c0;
+  border-color: white;
+  padding-top: 8px;
+}
+
+.login {
+  background: #4c56c0 0% 0% no-repeat padding-box;
+  height: 700px;
+}
+
+.login-form {
+  width: 1524px;
+  height: 100vh;
+  display: flexbox;
+}
